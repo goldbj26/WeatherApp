@@ -12,10 +12,16 @@ const forecast = (latitiue,longitute,callback) => {
 		else if (response.body.daily === undefined || response.body.daily.data === undefined || response.body.daily.data.length ===0) {
 			callback('Unable to read forcast response. Try another search.',undefined)
 		}		
-		else {						
-			callback (	undefined,
-				response.body.daily.data[0].summary + ' It is currently ' + response.body.currently.temperature + ' degrees. There is a ' + response.body.currently.precipProbability + '% chance of rain'
-			)
+		else {	
+			// build message string
+			let message = 	response.body.daily.data[0].summary
+			message += 	'It is currently ' + response.body.currently.temperature + ' degrees.'
+			message += 	'There is a ' + response.body.currently.precipProbability + '% chance of rain'
+			message += 	'Todays High is: ' + response.body.daily.data[0].temperatureHigh + 'and low is ' + response.body.daily.data[0].temperatureLow
+			//console.log('MYmessage', message)
+			
+			//callback
+			callback (undefined,message)			
 		}
 	})	
 }

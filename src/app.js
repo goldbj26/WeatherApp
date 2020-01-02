@@ -21,14 +21,14 @@ app.set('views',viewsDirectoryPath) // changes default views directory path
 hbs.registerPartials(partialsDirectoryPath)
 
 // Static Directory Setup
-app.use(express.static(publicDirectoryPath)) // base route automatically calls index.html. allows for file paths (old way). can still use routes below
+app.use(express.static(publicDirectoryPath)) // base route automatically calls index.html. allows for file paths (old way). can still use routes below.
 
 // Routes
 app.get('', (req,res)=>{
 	//res.send('Hello express!')
 	res.render('index', {  // render (linked up to hbs) automatically now calls views/index.hbs
 		title: 'Weather App',
-		name: 'Andrew Mead'
+		name: 'Yisroel Goldberg'
 	}) 
 })
 
@@ -72,14 +72,14 @@ app.get('/weather', (req,res)=>{
 app.get('/help', (req,res)=>{	
 	res.render('help', {
 		title: 'HELP!',
-		name: 'Andrew Mead'
+		name: 'Yisroel Goldberg'
 	}) 
 })
 
 app.get('/about', (req,res)=>{	
 	res.render('about', {
 		title: 'About',
-		name: 'Andrew Mead'
+		name: 'Yisroel Goldberg'
 	}) 
 })
 
@@ -87,7 +87,7 @@ app.get('/about', (req,res)=>{
 app.get('/help/*', (req,res)=>{	
 	res.render('404', {		
 		title: '404',
-		name: 'Andrew Mead',
+		name: 'Yisroel Goldberg',
 		errorMessage: 'Page Not Found'
 	})
 	//res.send('<h1>404 Help Page Not Found :(</h1>')
@@ -95,7 +95,7 @@ app.get('/help/*', (req,res)=>{
 app.get('*', (req,res)=>{
 	res.render('404', {
 		title: '404',
-		name: 'Andrew Mead',
+		name: 'Yisroel Goldberg',
 		errorMessage: 'Help Page Not Found'
 	}) 
 	//res.send('<h1>404 Not Found :(</h1>')
