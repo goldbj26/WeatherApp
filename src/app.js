@@ -9,9 +9,9 @@ const app = express()
 const port = process.env.PORT || 3000 // heroku sets the env variable "PORT". if not there, use default 3000
 
 // Paths
-const publicDirectoryPath = path.join(__dirname,'\..\\public')
-const viewsDirectoryPath = path.join(__dirname,'\..\\templates\\views')
-const partialsDirectoryPath = path.join(__dirname,'\..\\templates\\partials')
+const publicDirectoryPath = path.join(__dirname,'../public')
+const viewsDirectoryPath = path.join(__dirname,'../templates/views')
+const partialsDirectoryPath = path.join(__dirname,'../templates/partials')
 //console.log(publicDirectoryPath)
 
 // HandleBars Setup
