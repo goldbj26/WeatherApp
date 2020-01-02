@@ -7,7 +7,7 @@ const m2 = document.querySelector('#message2')
 
 
 const getWeather = (search) => {
-	fetch('http://localhost:3000/weather?location=' + search).then( (response) => {
+	fetch('/weather?location=' + search).then( (response) => {
 		response.json().then( (data) => {
 			if (data.error){
 				//console.log(data.error)

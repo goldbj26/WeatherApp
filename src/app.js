@@ -6,6 +6,7 @@ const forecast = require('./forecast')
 
 //Express Web Server
 const app = express()
+const port = process.env.PORT || 3000 // heroku sets the env variable "PORT". if not there, use default 3000
 
 // Paths
 const publicDirectoryPath = path.join(__dirname,'\..\\public')
@@ -103,7 +104,7 @@ app.get('*', (req,res)=>{
 
 
 // Web Server Startup()
-app.listen(3000, ()=>{
-	console.log('Server is upon port 3000.')
+app.listen(port, ()=>{
+	console.log('Server is upon port ' + port)
 })
 
